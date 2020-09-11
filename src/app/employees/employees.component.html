@@ -1,0 +1,15 @@
+<p>employees works!</p>
+<div class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource">
+
+    <!--dynamically populating table data-->
+    <ng-container *ngFor="let col of employeesColumnNames" [matColumnDef]="col">
+      <th mat-header-cell *matHeaderCellDef> {{col}} </th>
+      <td mat-cell *matCellDef="let employee"> {{employee[col]}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="employeesColumnNames"></tr>
+    <tr mat-row *matRowDef="let row; columns: employeesColumnNames;"></tr>
+
+  </table>
+</div>
